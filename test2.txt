@@ -1,9 +1,10 @@
 On branch danger
 Your branch is up to date with 'origin/danger'.
 
-Changes not staged for commit:
-  (use "git add <file>..." to update what will be committed)
-  (use "git restore <file>..." to discard changes in working directory)
-	modified:   test2.txt
+*** new text added to Highlight branch
 
-no changes added to commit (use "git add" and/or "git commit -a")
+Start early. The application process for graduate school can be lengthy, and if you're doing it right, doing the proper research for programs will add several months on top of that. Some experts recommended students start their research at least six months before applying to grad school. Students who start the process early will not only avoid a last-minute rush, but they may also save money in application fees for programs that don't really suit their needs.
+
+
+
+
