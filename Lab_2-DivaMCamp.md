@@ -123,6 +123,7 @@ Or type onto the console.
 > cat(paste(id, collapse=" / "))
 Diva M Camp / 64.5 / Halloween / Are you a Mexi-can or a Mexi-can't?
 
+
 Part 3: Accessing data in GitHub and mastering order of operations
 
 
