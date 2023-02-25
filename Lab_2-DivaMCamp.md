@@ -126,6 +126,31 @@ Diva M Camp / 64.5 / Halloween / Are you a Mexi-can or a Mexi-can't?
 
 Part 3: Accessing data in GitHub and mastering order of operations
 
+Please calculate a (using min), b (using max), and c (using mean) from data. Pay careful attention to follow order of operations (PEMDAS)
 
+> a <- min(data)
+> b <- max(data)
+> c <- mean(data)
+> a
+[1] 35
+> b
+[1] 373
+> c
+[1] 121.8183
 
+> x_positive <- (-b+sqrt((b*b)-(4*a*c)))/(2*a)
+> x_positive
+[1] -0.337264
+> x_negative <- (-b-sqrt((b*b)-(4*a*c)))/(2*a)
+> x_negative
+[1] -10.31988
+
+Use a, b, and c to solve for x using the quadratic equation. You will need to do this for + and - in the quadratic equation (i.e. you should have TWO answers). Please display the answer as x = {x1, x2} using cat and paste.
+
+> x <- c(x_positive, x_negative)
+> x
+[1]  -0.337264 -10.319879
+
+> cat(paste(x))
+-0.337264035203218 -10.3198788219396
 
