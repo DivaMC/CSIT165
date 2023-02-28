@@ -1,34 +1,51 @@
-Part 1: Introduction to modeling using basic R syntax
+---
+title: "Lab2_DivaMC"
+output: html_document
+date: "2023-02-24"
+---
 
-#Create a variable puppies equal to the number of puppies you’d like to have.
+**Part 1: Introduction to modeling using basic R syntax**
+
+_Create a variable puppies equal to the number of puppies you’d like to have._
+```
 > puppies<-22
 > puppies
 [1] 22
+```
 
-#Create a variable puppy_price, which is how much you think a puppy costs.
+_Create a variable puppy_price, which is how much you think a puppy costs._
+```
 > puppy_price<-100
 > puppy_price
 [1] 100
+```
 
-#Create a variable total_cost that has the total cost of all of your puppies.
+_Create a variable total_cost that has the total cost of all of your puppies._
+```
 > total_cost <- puppies * puppy_price
 > total_cost
 [1] 2200
+```
 
-#Create a boolean variable too_expensive, set to TRUE if the cost is greater than $1,000.
+_Create a boolean variable too_expensive, set to TRUE if the cost is greater than $1,000._
+```
 > too_expensive <- total_cost >= 1000
 > too_expensive
 [1] TRUE
+```
 
-#Create a variable max_puppies, which is the number of puppies you can afford for $1,000.
+_Create a variable max_puppies, which is the number of puppies you can afford_ for $1,000._
+```
 > max_puppies<-10
 > max_puppies
 [1] 10
+```
 
 
-Part 2: Manipulating variables and learning how to use new functions
+**Part 2: Manipulating variables and learning how to use new functions**
 
-#Assign your name to the variable my_name in four different ways.
+_Assign your name to the variable my_name in four different ways._
+```
 > my_name <- "Diva M Camp"
 > my_name = "Diva M Camp"
 > my_name -> "Diva M Camp"
@@ -39,25 +56,33 @@ Part 2: Manipulating variables and learning how to use new functions
 > my_name
 [1] "Diva M Camp"
 > rm("Diva M Camp")
+```
 
-#Assign your height (in inches) to a variable my_height.
+_Assign your height (in inches) to a variable my_height._
+```
 > my_height <- 64.5
 > my_height
 [1] 64.5
+```
 
-#Assign your favorite day to a varialbe favorite_day as a date object.
+_Assign your favorite day to a varialbe favorite_day as a date object._
+```
 > favorite_day <- "Halloween"
 > favorite_day
 [1] "Halloween"
+```
 
-#Assign your favorite quote to a variable favorite_quote. How many characters does your favorite quote have?
+_Assign your favorite quote to a variable favorite_quote. How many characters does your favorite quote have?_
+```
 > favorite_quote <- "Are you a Mexi-can or a Mexi-can't?"
 > favorite_quote
 [1] "Are you a Mexi-can or a Mexi-can't?"
 > nchar(favorite_quote)
 [1] 35
+```
 
-#Show what type of objects my_name, my_height, favorite_day, and favorite_quote are.
+_Show what type of objects my_name, my_height, favorite_day, and favorite_quote are._
+```
 > class(my_name)
 [1] "character"
 > class(my_height)
@@ -66,8 +91,10 @@ Part 2: Manipulating variables and learning how to use new functions
 [1] "character"
 > class(favorite_quote)
 [1] "character"
+```
 
-#Coerce these variables to numerics and describe what happens.
+_Coerce these variables to numerics and describe what happens._
+```
 > as.numeric(my_name)
 [1] NA
 Warning message:
@@ -82,20 +109,26 @@ NAs introduced by coercion
 [1] NA
 Warning message:
 NAs introduced by coercion 
+```
 
-#Create a vector variable named id that contains my_name, my_height, favorite_day, and favorite_quote.
+_Create a vector variable named id that contains my_name, my_height, favorite_day, and favorite_quote._
+```
 > id <- c(my_name, my_height, favorite_day, favorite_quote)
 > id
 [1] "Diva M Camp"                         "64.5"                               
 [3] "Halloween"                           "Are you a Mexi-can or a Mexi-can't?"
+```
 
-#What class is id? Did the classes for my_name, my_height, favorite_day, and favorite_quote change when they were stored in id? Did the classes change for the variables themselves?
+_What class is id? Did the classes for my_name, my_height, favorite_day, and favorite_quote change when they were stored in id? Did the classes change for the variables themselves?_
+```
 > class(id)
 [1] "character"
+```
 
-(The numeric variables became character variables, because all variables in the vector need to be the same class.)
+(The numeric variables became character variables, because all variables in the vector need to be the same class.) \n
 
-#Try using cat and paste with id as a function argument. How do the results differ? What happens when we use cat and paste at the same time (i.e. f(g(x)))? What happens if we change the order we use them (i.e. g(f(x)))?
+_Try using cat and paste with id as a function argument. How do the results differ? What happens when we use cat and paste at the same time (i.e. f(g(x)))? What happens if we change the order we use them (i.e. g(f(x)))?_
+```
 > cat(id)
 Diva M Camp 64.5 Halloween Are you a Mexi-can or a Mexi-can't?
 > paste(id)
@@ -107,27 +140,33 @@ Diva M Camp 64.5 Halloween Are you a Mexi-can or a Mexi-can't?
 Diva M Camp 64.5 Halloween Are you a Mexi-can or a Mexi-can't?character(0)
 > paste(my_name, my_height, favorite_day, favorite_quote)
 [1] "Diva M Camp 64.5 Halloween Are you a Mexi-can or a Mexi-can't?"
+```
 
-"cat" concatenates each variable in the vector into a single string. "paste" just seems to print the vector as stored. cat(paste(id)) seems to concatenate the variables onto a string. Whereas paste(cat(id)) concatenates the string variables, then prints character(0). 
+Cat concatenates each variable in the vector into a single string. Paste just seems to print the vector as stored. cat(paste(id)) seems to concatenate the variables onto a string. Whereas paste(cat(id)) concatenates the string variables, then prints character(0). 
 
-#How would you determine the difference between cat and paste using R documentation (from within RStudio)? What is a great internet resource to use as discussed in the book?
-Click on the help tab on the lower right quadrant, and type the function we're looking for. 
-Or type onto the console. 
+_How would you determine the difference between cat and paste using R documentation (from within RStudio)? What is a great internet resource to use as discussed in the book?_
+
+Click on the help tab on the lower right quadrant, and type the function we're looking for. Or type onto the console. 
+
+```
 > ?cat
 > ?paste
+```
 
-#What do sep and collapse arguments for paste do? If we wanted to append each character variable in our vector id with a new line (i.e. "\n") would we use sep or collapse?
-"sep" separates the string variables by the character(s) determined between "". "collapse" joins with a determined character string. 
+_What do sep and collapse arguments for paste do? If we wanted to append each character variable in our vector id with a new line (i.e. "\n") would we use sep or collapse?_
 
-#Display the contents of id using a combination of cat and paste with the appropriate arguments for paste.
+Sep separates the string variables by the character(s) determined between "". Collapse joins with a determined character string. \n
+
+_Display the contents of id using a combination of cat and paste with the appropriate arguments for paste._
+```
 > cat(paste(id, collapse=" / "))
 Diva M Camp / 64.5 / Halloween / Are you a Mexi-can or a Mexi-can't?
+```
 
+**Part 3: Accessing data in GitHub and mastering order of operations**
 
-Part 3: Accessing data in GitHub and mastering order of operations
-
-Please calculate a (using min), b (using max), and c (using mean) from data. Pay careful attention to follow order of operations (PEMDAS)
-
+_Please calculate a (using min), b (using max), and c (using mean) from data. Pay careful attention to follow order of operations (PEMDAS)_
+```
 > a <- min(data)
 > b <- max(data)
 > c <- mean(data)
@@ -144,13 +183,15 @@ Please calculate a (using min), b (using max), and c (using mean) from data. Pay
 > x_negative <- (-b-sqrt((b*b)-(4*a*c)))/(2*a)
 > x_negative
 [1] -10.31988
+```
 
-Use a, b, and c to solve for x using the quadratic equation. You will need to do this for + and - in the quadratic equation (i.e. you should have TWO answers). Please display the answer as x = {x1, x2} using cat and paste.
+_Use a, b, and c to solve for x using the quadratic equation. You will need to do this for + and - in the quadratic equation (i.e. you should have TWO answers). Please display the answer as x = {x1, x2} using cat and paste._
 
+```
 > x <- c(x_positive, x_negative)
 > x
 [1]  -0.337264 -10.319879
 
 > cat(paste(x))
 -0.337264035203218 -10.3198788219396
-
+```
